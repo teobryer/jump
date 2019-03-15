@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jump</string>
+    <string name="title_activity_apropos">AProposActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="Auteur">Auteur</string>
+    <string name="Jump">Jump</string>
+    <string name="txtJeu">Dans Jump, le but du jeu est simple : il faut que la grenouille arrive a sauter de nenuphar en nenuphar sans tomber dans l\'eau. Seul(e)s les meilleur(e)s eleveurs/eleveuses de grenouilles arriveront a aller loin.</string>
+    <string name="txtAuteur">Teo BRYER, etudiant en 2eme annee de DUT Informatique a l\'IUT de Laval lors de la creation de ce mini-jeu. Le but etant de confirmer les competences vues en cours lors du module de Conception et programmation d\'applications mobiles</string>
+</resources>

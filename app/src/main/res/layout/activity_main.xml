@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/valley"
+    tools:context=".MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="425dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="112dp"
+        android:max="420"
+        android:progress="100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/nenupharFixe"
+        android:layout_width="63dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/eau"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/nenuphar" />
+
+    <ImageView
+        android:id="@+id/nenuphar"
+        android:layout_width="63dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="416dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/eau"
+        app:layout_constraintStart_toEndOf="@+id/nenupharFixe"
+        app:srcCompat="@drawable/nenuphar" />
+
+    <ImageView
+        android:id="@+id/frog"
+        android:layout_width="138dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/nenupharFixe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/frog" />
+
+    <ImageView
+        android:id="@+id/eau"
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/water"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Meilleur score :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bestScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
