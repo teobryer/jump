@@ -21,7 +21,9 @@ public class Menu extends AppCompatActivity {
     int bestScore;
     TextView bestScoreAff;
     TextView text;
+    TextView text2;
     ConstraintLayout constraintLayout;
+    TextView nbParties;
 
     static int width;
     static int height;
@@ -32,12 +34,19 @@ public class Menu extends AppCompatActivity {
         SystemClock.sleep(1000);
         setContentView(R.layout.activity_menu);
         constraintLayout = findViewById(R.id.layout);
+        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/police.ttf");
+
         Log.e("width1", String.valueOf(width));
         SharedPreferences prefs = this.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        nbParties= findViewById(R.id.nbParties);
+        nbParties.setText(String.valueOf(prefs.getInt("nbParties",0)) );
+        Log.e("test",String.valueOf(prefs.getInt("nbParties",0)));
+        nbParties.setTypeface(font);
         bestScoreAff = findViewById(R.id.bestScore1);
         text = findViewById(R.id.textView);
+        text2 =findViewById(R.id.textView2);
+        text2.setTypeface(font);
         bestScore = prefs.getInt("bestScore", 0); //0 is the default value
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/police.ttf");
         text.setTypeface(font);
         bestScoreAff.setTypeface(font);
         bestScoreAff.setText(String.valueOf(bestScore));

@@ -17,6 +17,9 @@ public class Partie {
     TextView bestScoreAff;
     TextView text;
     MainActivity activity;
+    public final static String NB_PARTIES_TOTAL = "nbPartiesTotal";
+    static int nbParties;
+
 
     public Partie(TextView text, TextView scoreAff, TextView bestScoreAff, Context context, MainActivity activity) {
         this.scoreAff = scoreAff;
@@ -27,6 +30,7 @@ public class Partie {
         SharedPreferences prefs = context.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
         score = prefs.getInt("score", 0); //0 is the default value
         bestScore = prefs.getInt("bestScore", 0); //0 is the default value
+        nbParties = prefs.getInt("nbParties",0);
         Log.e("score", String.valueOf(score));
         scoreAff.setText(String.valueOf(score));
         bestScoreAff.setText(String.valueOf(bestScore));
@@ -48,7 +52,12 @@ public class Partie {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
         View mView = activity.getLayoutInflater().inflate(R.layout.replay, null);
         Button replay = mView.findViewById(R.id.replay);
+        SharedPreferences prefs = context.getSharedPreferences("myPrefsKey", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("nbParties", nbParties+1);
 
+        editor.commit();
+        Log.e("test",String.valueOf(prefs.getInt("nbParties",0)));
         replay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
