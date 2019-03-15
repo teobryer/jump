@@ -3,6 +3,7 @@ package com.example.i173508.jump;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     Curseur monCurseur;
     Partie partie;
     int width;
+    private MediaPlayer mediaPlayer;
 
 
     @Override
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         constraintLayout = findViewById(R.id.constraint);
+
+        this.mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.jump);
 
         nenupharFixe = findViewById(R.id.nenupharFixe);
         eau = findViewById(R.id.eau);
@@ -166,7 +170,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
 
         monCurseur.stop();
+        mediaPlayer.start();
         maGrenouille.jump(monCurseur.calculeDistance());
+
 
         return false;
     }
